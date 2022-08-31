@@ -35,9 +35,9 @@ export default {
       User ID:
       <input type="text" v-model="newActivityParams.user_id" />
       Activity Type:
-      <input type="text" v-model="newPhotoParams.activity_type" />
+      <input type="text" v-model="newActivityParams.activity_type" />
       Ability Level
-      <input type="text" v-model="newPhotoParams.ability_level" />
+      <input type="text" v-model="newActivityParams.ability_level" />
       <input type="submit" value="Create" />
     </form>
   </div>
