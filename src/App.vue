@@ -2,7 +2,11 @@
   <nav>
     <router-link to="/">Home</router-link>
     |
-    <router-link to="/about">About</router-link>
+    <router-link to="/activities">Create Activity</router-link>
+    |
+    <router-link to="/activities">Find Activity</router-link>
+    |
+    <router-link to="/user">Profile</router-link>
   </nav>
   <router-view />
 </template>

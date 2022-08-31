@@ -12,7 +12,14 @@ export default {
 
 <template>
   <div class="home">
-    <h1>{{ message }}</h1>
+    <h1>{{ Shugo }}</h1>
+    <h2>
+      <router-link to="/signup">Signup</router-link>
+
+      <router-link to="/login">Login</router-link>
+
+      <router-link to="/logout">Logout</router-link>
+    </h2>
   </div>
 </template>
 

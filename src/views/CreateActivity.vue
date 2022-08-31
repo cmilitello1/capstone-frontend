@@ -3,17 +3,43 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "Create Activity page",
+      newActivityParams: {},
+      errors: [],
     };
   },
   created: function () {},
-  methods: {},
+  methods: {
+    createActivity: function () {
+      axios
+        .post("/activities", this.newActivityParams)
+        .then((response) => {
+          console.log("activity created", response);
+          this.$router.push("/activities");
+        })
+        .catch((error) => {
+          console.log("activity create error", error.response);
+          this.errors = error.response.data.errors;
+        });
+    },
+  },
 };
 </script>
 
 <template>
-  <div class="home">
-    <h1>{{ message }}</h1>
+  <div class="create-activity">
+    <h1>Create Activity</h1>
+    <form v-on:submit.prevent="createActivity()">
+      <ul>
+        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+      </ul>
+      User ID:
+      <input type="text" v-model="newActivityParams.user_id" />
+      Activity Type:
+      <input type="text" v-model="newPhotoParams.activity_type" />
+      Ability Level
+      <input type="text" v-model="newPhotoParams.ability_level" />
+      <input type="submit" value="Create" />
+    </form>
   </div>
 </template>
 
