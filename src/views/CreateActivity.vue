@@ -26,21 +26,27 @@ export default {
 </script>
 
 <template>
-  <div class="create-activity">
-    <h1>Create Activity</h1>
-    <form v-on:submit.prevent="createActivity()">
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      User ID:
-      <input type="text" v-model="newActivityParams.user_id" />
-      Activity Type:
-      <input type="text" v-model="newActivityParams.activity_type" />
-      Ability Level
-      <input type="text" v-model="newActivityParams.ability_level" />
-      <input type="submit" value="Create" />
-    </form>
-  </div>
+  <body class="create-activity-body">
+    <div class="create-activity">
+      <h1>Create Activity</h1>
+      <form v-on:submit.prevent="createActivity()">
+        <ul>
+          <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+        </ul>
+        User ID:
+        <input type="text" v-model="newActivityParams.user_id" />
+        Activity Type:
+        <input type="text" v-model="newActivityParams.activity_type" />
+        Ability Level
+        <input type="text" v-model="newActivityParams.ability_level" />
+        <input type="submit" value="Create" />
+      </form>
+    </div>
+  </body>
 </template>
 
-<style></style>
+<style>
+.create-activity-body {
+  margin-top: 25px;
+}
+</style>
