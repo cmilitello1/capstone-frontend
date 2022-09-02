@@ -4,6 +4,8 @@ import SignupView from "../views/SignupView.vue";
 import LoginView from "../views/LoginView.vue";
 import LogoutView from "../views/LogoutView.vue";
 import CreateActivity from "../views/CreateActivity.vue";
+import ActivitiesIndex from "../views/ActivitiesIndex.vue";
+import EditActivity from "../views/EditActivity.vue";
 
 const routes = [
   { path: "/", name: "home", component: HomeView },
@@ -12,6 +14,8 @@ const routes = [
   { path: "/login", name: "login", component: LoginView },
   { path: "/logout", name: "logout", component: LogoutView },
   { path: "/create-activity", name: "Create Activity", component: CreateActivity },
+  { path: "/find-activity", name: "Fine an Activity", component: ActivitiesIndex },
+  { path: "/edit-activity", name: "Edit My Activity", component: EditActivity },
 ];
 
 const router = createRouter({

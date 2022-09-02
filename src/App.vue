@@ -17,7 +17,7 @@
             <li><a class="nav-link scrollto" href="#about">About</a></li>
             <li><a class="nav-link scrollto" href="#services">Services</a></li>
             <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
-            <li><a class="nav-link scrollto" href="#team">Team</a></li>
+            <li><a class="nav-link scrollto" href="/find-activity">Find an Activity</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li class="dropdown">
               <a href="#">
@@ -56,5 +56,11 @@
     <!-- End Header -->
   </div>
 
-  <router-view />
+  <div class="content"><router-view /></div>
 </template>
+
+<style>
+.content {
+  margin-top: 200px;
+}
+</style>
