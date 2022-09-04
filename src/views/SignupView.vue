@@ -25,7 +25,7 @@ export default {
 </script>
 
 <template>
-  <div class="signup">
+  <!-- <div class="signup">
     <form v-on:submit.prevent="submit()">
       <h1>Signup</h1>
       <ul>
@@ -49,7 +49,80 @@ export default {
       </div>
       <input type="submit" value="Submit" />
     </form>
-  </div>
+  </div> -->
+
+  temp contact section
+  <!-- ======= Contact Section ======= -->
+  <section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Sign Up</h2>
+      </div>
+      <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-6">
+          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form v-on:submit.prevent="submit()">
+              <div class="row">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    v-model="newUserParams.name"
+                    name="name"
+                    class="form-control"
+                    id="name"
+                    placeholder="Your Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    v-model="newUserParams.email"
+                    name="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Your email"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col form-group">
+                  <input
+                    type="text"
+                    v-model="newUserParams.password"
+                    name="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="password"
+                    required
+                  />
+                </div>
+                <div class="col form-group">
+                  <input
+                    type="text"
+                    v-model="newUserParams.password_confirmation"
+                    name="password_confirmation"
+                    class="form-control"
+                    id="password_confirmation"
+                    placeholder="re-type password"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Sign Up</button></div>
+            </form>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Contact Section -->
 </template>
 
 <style></style>

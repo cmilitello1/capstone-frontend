@@ -1,9 +1,9 @@
 <template>
-  <div id="app">
+  <div>
     <header id="header" class="fixed-top d-flex align-items-center">
       <div class="container d-flex align-items-center">
         <h1 class="logo me-auto">
-          <a href="index.html">
+          <a href="/">
             Shugo
             <span>.</span>
           </a>
@@ -50,17 +50,17 @@
         </nav>
         <!-- .navbar -->
 
-        <a href="/signup" class="get-started-btn scrollto">Sign Up</a>
+        <a href="/signup" class="get-started-btn scrollto">Get Started</a>
       </div>
     </header>
     <!-- End Header -->
-  </div>
 
-  <div class="content"><router-view /></div>
+    <router-view />
+  </div>
 </template>
 
 <style>
 .content {
-  margin-top: 200px;
+  margin-top: 400px;
 }
 </style>

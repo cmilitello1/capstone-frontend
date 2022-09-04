@@ -5,6 +5,7 @@ export default {
     return {
       newActivityParams: {},
       errors: [],
+      success_message: "Activity Created",
     };
   },
   created: function () {},
@@ -14,7 +15,7 @@ export default {
         .post("/activities", this.newActivityParams)
         .then((response) => {
           console.log("activity created", response);
-          this.$router.push("/activities");
+          // this.$router.push("/find-activity");
         })
         .catch((error) => {
           console.log("activity create error", error.response);
@@ -47,15 +48,12 @@ export default {
   <section id="contact" class="contact">
     <div class="container" data-aos="fade-up">
       <div class="section-title">
-        <h2>Contact</h2>
-        <p>
-          Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-          consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
-        </p>
+        <h2>Create an Activity</h2>
+        <p>Find buddies to adventure with!</p>
       </div>
 
       <div class="row" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-lg-6">
+        <!-- <div class="col-lg-6">
           <div class="row">
             <div class="col-md-12">
               <div class="info-box">
@@ -87,30 +85,60 @@ export default {
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div class="col-lg-6">
           <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-            <div class="row">
-              <div class="col form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required />
+            <form v-on:submit.prevent="createActivity()">
+              <div class="row">
+                <div class="col form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required />
+                </div>
+                <div class="col form-group">
+                  <input
+                    type="text"
+                    v-model="newActivityParams.user_id"
+                    class="form-control"
+                    name="user_id"
+                    id="user_id"
+                    placeholder="User id"
+                    required
+                  />
+                  <!-- <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required /> -->
+                </div>
               </div>
-              <div class="col form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required />
+              <div class="form-group">
+                <input
+                  type="text"
+                  v-model="newActivityParams.activity_type"
+                  class="form-control"
+                  name="activity_type"
+                  id="activity_type"
+                  placeholder="Activity"
+                  required
+                />
+                <!-- <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required /> -->
               </div>
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required />
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-            </div>
-            <div class="my-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  v-model="newActivityParams.ability_level"
+                  class="form-control"
+                  name="ability_level"
+                  id="ability_level"
+                  placeholder="Ability Level"
+                  required
+                />
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your Activity has been posted!</div>
+              </div>
+              <div class="text-center">
+                <button type="submit">Post Activity</button>
+              </div>
+            </form>
           </form>
         </div>
       </div>
@@ -119,8 +147,8 @@ export default {
   <!-- End Contact Section -->
 </template>
 
-<!-- <style>
-.create-activity-body {
-  margin-top: 50px;
+<style>
+#contact {
+  margin-top: 100px;
 }
-</style> -->
+</style>
