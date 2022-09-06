@@ -15,16 +15,16 @@
           <ul>
             <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
             <li><a class="nav-link scrollto" href="#about">About</a></li>
-            <li><a class="nav-link scrollto" href="#services">Services</a></li>
-            <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
+            <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li>
+            <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li> -->
             <li><a class="nav-link scrollto" href="/find-activity">Find an Activity</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li class="dropdown">
-              <a href="#">
+              <!-- <a href="#">
                 <span>Drop Down</span>
                 <i class="bi bi-chevron-down"></i>
-              </a>
-              <ul>
+              </a> -->
+              <!-- <ul>
                 <li><a href="#">Drop Down 1</a></li>
                 <li class="dropdown">
                   <a href="#">
@@ -42,7 +42,7 @@
                 <li><a href="#">Drop Down 2</a></li>
                 <li><a href="#">Drop Down 3</a></li>
                 <li><a href="#">Drop Down 4</a></li>
-              </ul>
+              </ul> -->
             </li>
             <li><a class="nav-link scrollto" href="/create-activity">Create Activity</a></li>
           </ul>

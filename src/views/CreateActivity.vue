@@ -15,7 +15,7 @@ export default {
         .post("/activities", this.newActivityParams)
         .then((response) => {
           console.log("activity created", response);
-          // this.$router.push("/find-activity");
+          // return: "Activity Created",
         })
         .catch((error) => {
           console.log("activity create error", error.response);

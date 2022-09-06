@@ -29,7 +29,7 @@ export default {
 </script>
 
 <template>
-  <!-- <div class="login">
+  <div class="login">
     <form v-on:submit.prevent="submit()">
       <h1>Login</h1>
       <ul>
@@ -45,8 +45,8 @@ export default {
       </div>
       <input type="submit" value="Submit" />
     </form>
-  </div> -->
-  <section id="contact" class="contact">
+  </div>
+  <!-- <section id="contact" class="contact">
     <div class="container" data-aos="fade-up">
       <div class="section-title">
         <h2>Sign Up</h2>
@@ -59,7 +59,7 @@ export default {
                 <div class="form-group">
                   <input
                     type="text"
-                    v-model="newUserParams.name"
+                    v-model="newSessionsParams.email"
                     name="name"
                     class="form-control"
                     id="name"
@@ -70,7 +70,7 @@ export default {
                 <div class="form-group">
                   <input
                     type="text"
-                    v-model="newUserParams.email"
+                    v-model="newSessionsParams.password"
                     name="email"
                     class="form-control"
                     id="email"
@@ -90,5 +90,11 @@ export default {
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </template>
+
+<style>
+.login {
+  margin-top: 200px;
+}
+</style>

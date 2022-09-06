@@ -25,7 +25,7 @@ export default {
 </script>
 
 <template>
-  <!-- <div class="signup">
+  <div class="signup">
     <form v-on:submit.prevent="submit()">
       <h1>Signup</h1>
       <ul>
@@ -49,7 +49,7 @@ export default {
       </div>
       <input type="submit" value="Submit" />
     </form>
-  </div> -->
+  </div>
 
   temp contact section
   <!-- ======= Contact Section ======= -->
@@ -89,7 +89,7 @@ export default {
               <div class="row">
                 <div class="col form-group">
                   <input
-                    type="text"
+                    type="password"
                     v-model="newUserParams.password"
                     name="password"
                     class="form-control"
@@ -100,7 +100,7 @@ export default {
                 </div>
                 <div class="col form-group">
                   <input
-                    type="text"
+                    type="password"
                     v-model="newUserParams.password_confirmation"
                     name="password_confirmation"
                     class="form-control"

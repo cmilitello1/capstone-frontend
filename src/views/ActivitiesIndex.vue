@@ -4,10 +4,13 @@ export default {
   data: function () {
     return {
       activities: [],
+      messageBody: "",
+      message: "message sent",
     };
   },
   created: function () {
     this.indexActivities();
+    // this.twilioMessage();
   },
   methods: {
     indexActivities: function () {
@@ -15,6 +18,17 @@ export default {
         console.log("activities index", response);
         this.activities = response.data;
       });
+    },
+    twilioMessage: function () {
+      axios
+        .post("/sendtext", { textBody: this.messageBody })
+        .then((response) => {
+          console.log("message sent", response.data);
+          // message: "Message sent";
+        })
+        .catch((error) => {
+          this.errors = error.response.data.errors;
+        });
     },
   },
 };
@@ -44,14 +58,30 @@ export default {
               <div class="swiper-slide">
                 <div class="testimonial-wrap">
                   <div class="testimonial-item">
-                    <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="" />
+                    <!-- <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="" /> -->
                     <h3>Activity Type: {{ activity.activity_type }}</h3>
-                    <h4>Name: {{ activity.user_id }}</h4>
+                    <!-- fix this!!! -->
+                    <h4>Name: {{ activity.name }}</h4>
                     <p>
                       <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                       Ability Level {{ activity.ability_level }}
                       <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                     </p>
+
+                    <form v-on:submit.prevent="twilioMessage()">
+                      <div class="form-group">
+                        <textarea
+                          class="form-control"
+                          v-model="messageBody"
+                          name="message"
+                          rows="2"
+                          placeholder="Message"
+                          required
+                        ></textarea>
+                      </div>
+                      <h2></h2>
+                      <div><button type="submit" class="get-started-btn scrollto">Message</button></div>
+                    </form>
                   </div>
                 </div>
               </div>
